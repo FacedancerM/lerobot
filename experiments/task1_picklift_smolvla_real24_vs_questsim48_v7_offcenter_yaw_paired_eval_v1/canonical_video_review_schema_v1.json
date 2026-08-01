@@ -1,0 +1,24 @@
+{
+  "immutable_write": true,
+  "paired_result_rule": "Freeze all 24 canonical reviews before computing A/B paired counts; do not alter checkpoint, pose, order, or retry from outcomes.",
+  "required": [
+    "evaluation_id",
+    "trial_id",
+    "canonical_video_sha256",
+    "pre_action_frame_sha256",
+    "review_label",
+    "failure_category",
+    "bilateral_grasp_visible",
+    "table_support_absent",
+    "lift_at_least_0p05m",
+    "continuous_hold_at_least_0p5s",
+    "reviewed_utc"
+  ],
+  "review_label_values": [
+    "success",
+    "failure",
+    "not_reviewable"
+  ],
+  "schema_id": "task1_smolvla_matched_real_canonical_video_review_v1",
+  "schema_version": 1
+}

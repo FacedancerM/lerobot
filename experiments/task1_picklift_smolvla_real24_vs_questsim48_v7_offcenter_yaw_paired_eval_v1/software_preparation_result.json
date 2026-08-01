@@ -1,0 +1,89 @@
+{
+  "canonical_review_schema_sha256": "052cd73fbb6a541d54b1175ca3474908453b89f3f7907eaf9bc2ef914014a1ed",
+  "dry_run": {
+    "checkpoint_adapter_smoke": {
+      "A_real24_only": {
+        "finite": true,
+        "model_sha256": "916f0111caf004cafd37f8fd9db9b6e5aa35c1d125cf59ea5cd63b8f19897c83",
+        "shape": [
+          1,
+          6
+        ],
+        "task_prompt": "Task 1 PickLift v1: grasp the 2 cm red cube and lift it >=5 cm with bilateral finger hold"
+      },
+      "B_real24_plus_questsim48_v7": {
+        "finite": true,
+        "model_sha256": "1a1dbc6d553c9501a76d4ed4b9cc3bd7b84724216086432868d7ab6b2fa5c185",
+        "shape": [
+          1,
+          6
+        ],
+        "task_prompt": "Task 1 PickLift v1: grasp the 2 cm red cube and lift it >=5 cm with bilateral finger hold"
+      }
+    },
+    "hardware_access": {
+      "camera": false,
+      "robot": false,
+      "rollout": false,
+      "serial": false,
+      "torque": false
+    },
+    "policy_reset_calls": {
+      "A_real24_only": 12,
+      "B_real24_plus_questsim48_v7": 12
+    },
+    "ready_interpolation_commands": 60,
+    "status": "software_dry_run_passed_hardware_not_accessed",
+    "trials_exercised": 24
+  },
+  "engine_sha256": "e81f21f298512b7de27d3142f2e308b8102404d0befab4ce7203fd6379882f9d",
+  "evaluation_id": "task1_picklift_smolvla_real24_vs_questsim48_v7_offcenter_yaw_paired_eval24_v1",
+  "evaluator_sha256": "b3ccdfd26f6cd786347d6eb3d85324de3908942245ab368b0b646caaa80043a9",
+  "hardware_access": {
+    "camera": false,
+    "robot": false,
+    "rollout": false,
+    "serial": false,
+    "torque": false
+  },
+  "hardware_gate": {
+    "authorized": false,
+    "next_model": "B_real24_plus_questsim48_v7",
+    "next_trial_id": "t01",
+    "next_user_instruction_zh": "\u786e\u8ba4\u539f Real \u76f8\u673a\u548c\u7f51\u683c setup \u4e0d\u53d8\uff0c\u6253\u5f00 Follower 12V\uff1b\u7136\u540e\u5728 r3c3 \u5c06\u7ea2\u8272\u65b9\u5757\u4e2d\u5fc3\u653e\u5728 X=31 cm\u3001Y=+4 cm \u7684\u7f51\u683c\u4ea4\u70b9\uff0c\u65b9\u5757\u8fb9\u4e0e\u7f51\u683c\u7ebf\u5e73\u884c\uff080\u00b0\uff09\u3002"
+  },
+  "models": {
+    "A_real24_only": {
+      "model_sha256": "916f0111caf004cafd37f8fd9db9b6e5aa35c1d125cf59ea5cd63b8f19897c83",
+      "trials": 12
+    },
+    "B_real24_plus_questsim48_v7": {
+      "model_sha256": "1a1dbc6d553c9501a76d4ed4b9cc3bd7b84724216086432868d7ab6b2fa5c185",
+      "trials": 12
+    }
+  },
+  "operator_schema_sha256": "cf2be19cf30705c674526f012d8837a1fe62455649f22ac5945360e7810cec46",
+  "paper_result": false,
+  "plan_sha256": "797cda9d8215d2bc4435fffdce5f98a952f3aa452d0e28df28bb73ffd2ac4686",
+  "profile_sha256": "9cfbd4eb67b02c11f6f16448df3216bbba2f9221feef2f0c5e5a2a0dd130fd31",
+  "schema_version": 1,
+  "software_evidence": {
+    "files": {
+      "canonical_video_review_schema_v1.json": "052cd73fbb6a541d54b1175ca3474908453b89f3f7907eaf9bc2ef914014a1ed",
+      "dry_run.json": "315ead3508f7bd670cee8622eefc4de41eddb793485e7c5523c24b98dd0cc6f6",
+      "evaluation_plan.json": "797cda9d8215d2bc4435fffdce5f98a952f3aa452d0e28df28bb73ffd2ac4686",
+      "operator_annotation_schema_v1.json": "cf2be19cf30705c674526f012d8837a1fe62455649f22ac5945360e7810cec46",
+      "real_evaluation_profile_return3s_v1.json": "9cfbd4eb67b02c11f6f16448df3216bbba2f9221feef2f0c5e5a2a0dd130fd31",
+      "research_result_manifest_snapshot.json": "7de6b3b29de5f693081316180415be73b30e62d88ac1dddbec25f327bbb109ea",
+      "software_freeze_index.json": "92159c0b2c9be8d11e0f7a5de841bae4b8b54e5fcf961627c5cf914b01e89460"
+    },
+    "hashes_sha256": "bc252abcb20b8a85f6c845a73440274fc4959dfd85fc8b5a17b0b9c90e11e59d",
+    "independent_validation_sha256": "6365c7f1ec956e328d0582a893fc5848801eb5233ff93e95fb8ee8d1c99d5de5",
+    "root": "/home/ubuntu24/Teleop/artifacts/evaluation/task1_picklift_smolvla_real24_vs_questsim48_v7_offcenter_yaw_paired_eval24_v1/software_preparation_v1"
+  },
+  "status": "software_preparation_passed_waiting_for_explicit_hardware_go",
+  "tests": {
+    "failed": 0,
+    "passed": 9
+  }
+}

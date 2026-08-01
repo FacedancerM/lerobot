@@ -1,0 +1,111 @@
+{
+  "action_path": {
+    "custom_absolute_action_clamp": false,
+    "max_relative_target": null,
+    "policy_command_flow": [
+      "ACT postprocessor output",
+      "SO101Follower.send_action",
+      "FeetechMotorsBus.sync_write Goal_Position"
+    ],
+    "profile_id": "lerobot_so101_official_send_no_custom_clamp_v1",
+    "recorded_fields": [
+      "raw_action",
+      "requested_action",
+      "sent_action",
+      "upstream_action_modified_mask"
+    ],
+    "upstream_behavior": {
+      "FeetechMotorsBus_DEGREES": "Degree-mode body-joint values are converted to raw motor units without calibration-range clamping.",
+      "FeetechMotorsBus_RANGE_0_100": "The upstream gripper normalization bounds values to 0..100 before raw-unit conversion.",
+      "SO101Follower.send_action": "With max_relative_target=None, no relative goal clipping is applied.",
+      "sent_action_semantics": "The returned sent_action is the normalized command returned by the official robot API, before internal raw-register conversion."
+    }
+  },
+  "frozen_policy": {
+    "checkpoint_step": 20000,
+    "chunk_size": 50,
+    "inputs": [
+      "observation.state float32[6]",
+      "observation.images.front uint8[480,640,3]"
+    ],
+    "model_sha256": {
+      "A_real24_only": "916f0111caf004cafd37f8fd9db9b6e5aa35c1d125cf59ea5cd63b8f19897c83",
+      "B_real24_plus_questsim48_v7": "1a1dbc6d553c9501a76d4ed4b9cc3bd7b84724216086432868d7ab6b2fa5c185"
+    },
+    "n_action_steps": 50,
+    "output": "action float32[6]",
+    "policy_type": "smolvla",
+    "task_prompt": "Task 1 PickLift v1: grasp the 2 cm red cube and lift it >=5 cm with bilateral finger hold"
+  },
+  "policy_start_order": [
+    "move_to_frozen_ready_pose",
+    "record_ready_pose_requested_observed_delta",
+    "reset_ACT_policy_action_queue",
+    "acquire_tick0_observation",
+    "start_policy_timing_and_inference"
+  ],
+  "policy_timing": {
+    "control_fps": 20,
+    "duration_seconds": 30,
+    "nominal_ticks_at_target_rate": 600,
+    "period_seconds": 0.05,
+    "profile_id": "lerobot_per_tick_pacing_no_catchup_v1",
+    "semantics": "For the 30-second wall-time window, each tick executes once, then sleeps max(period - tick_compute_time, 0). A slow tick does not advance an absolute deadline and does not trigger queued catch-up actions; actual tick count is recorded rather than backfilled."
+  },
+  "profile_id": "task1_real24_ready_pose_official_send_interpolated3s_tolerance3_v1",
+  "profile_version": 1,
+  "ready_pose": {
+    "joint_order": [
+      "shoulder_pan",
+      "shoulder_lift",
+      "elbow_flex",
+      "wrist_flex",
+      "wrist_roll",
+      "gripper"
+    ],
+    "profile_id": "task1_real24_ready_pose_reset_v1",
+    "source_dataset_tree_sha256": "251cbdc079b304425ccdfbd7a08f15d34858ea0dd8c19345544b8da9f3adb9f2",
+    "source_episode_index": 13,
+    "source_frame_index": 0,
+    "state": [
+      7.4285712242126465,
+      -98.32967376708984,
+      45.010990142822266,
+      92.21977996826172,
+      1.8461538553237915,
+      19.765840530395508
+    ],
+    "state_dtype": "float32",
+    "state_sha256": "ecb871efad5692e192ac0f690bc0e959fef371bbb8338a31b23ca697741e3b56",
+    "state_shape": [
+      6
+    ]
+  },
+  "ready_pose_movement": {
+    "after_every_trial": true,
+    "arrival_tolerance_degrees": 3.0,
+    "before_every_trial": true,
+    "command_path": "SO101Follower.send_action",
+    "control_fps": 20,
+    "custom_relative_step_limit": null,
+    "evidence": [
+      "requested_state",
+      "observed_state",
+      "delta_requested_minus_observed",
+      "requested_action",
+      "sent_action",
+      "trajectory_phase",
+      "interpolation_alpha",
+      "planned_interpolation_steps"
+    ],
+    "interpolation_duration_seconds": 3.0,
+    "interpolation_steps": 60,
+    "movement_timeout_seconds": 60.0,
+    "post_interpolation_behavior": "hold exact frozen ready target until arrival tolerance is observed",
+    "profile_id": "task1_real24_ready_pose_interpolated3s_official_send_tolerance3_v1",
+    "start": "observed joint state at movement start",
+    "target": "the same frozen ready_pose.state for every trial",
+    "trajectory": "time_parameterized_linear_interpolation"
+  },
+  "scope": "Task1 fixed-100k ACT pilot continuation with three-second ready/return outside the scored window"
+}

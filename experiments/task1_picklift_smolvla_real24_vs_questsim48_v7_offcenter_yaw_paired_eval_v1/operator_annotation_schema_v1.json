@@ -1,0 +1,30 @@
+{
+  "failure_category_values": [
+    "none",
+    "missed_grasp",
+    "insufficient_lift",
+    "dropped_before_0p5s",
+    "timeout",
+    "unknown",
+    "infrastructure_invalid"
+  ],
+  "immutable_write": true,
+  "operator_label_values": [
+    "success",
+    "failure",
+    "infrastructure_invalid"
+  ],
+  "required": [
+    "evaluation_id",
+    "trial_id",
+    "artifact_stem",
+    "engine_evidence_sha256",
+    "operator_label",
+    "failure_category",
+    "placement_confirmed",
+    "annotation_utc"
+  ],
+  "schema_id": "task1_smolvla_matched_real_operator_annotation_v1",
+  "schema_version": 1,
+  "success_definition": "visible bilateral grasp without table support, approximately >=0.05 m lift, continuously held >=0.5 s at any time in the full 30 s scored window"
+}
