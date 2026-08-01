@@ -121,8 +121,13 @@ def verify_static_files(plan: dict) -> dict:
 
 def load_engine(plan: dict):
     path = EXPERIMENT_DIR / "smolvla_official_send_engine.py"
+    deployment_safety_dir = REPO_ROOT / "experiments/task1_picklift_real24_act_v1"
+    if str(deployment_safety_dir) not in sys.path:
+        sys.path.insert(0, str(deployment_safety_dir))
     if str(path.parent) not in sys.path:
         sys.path.insert(0, str(path.parent))
+    if str(REPO_ROOT) not in sys.path:
+        sys.path.insert(0, str(REPO_ROOT))
     spec = importlib.util.spec_from_file_location("smolvla_official_send_engine", path)
     if spec is None or spec.loader is None:
         raise RuntimeError("cannot load SmolVLA official-send engine")

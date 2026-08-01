@@ -2,7 +2,7 @@
   "canonical_review_schema_sha256": "052cd73fbb6a541d54b1175ca3474908453b89f3f7907eaf9bc2ef914014a1ed",
   "engine_sha256": "e81f21f298512b7de27d3142f2e308b8102404d0befab4ce7203fd6379882f9d",
   "evaluation_id": "task1_picklift_smolvla_real24_vs_questsim48_v7_offcenter_yaw_paired_eval24_v1",
-  "evaluator_sha256": "b3ccdfd26f6cd786347d6eb3d85324de3908942245ab368b0b646caaa80043a9",
+  "evaluator_sha256": "46cadb79853535e57c12f5540fc987c8f99a06717df89ea474ca5bb2a5fa7440",
   "hardware_access": {
     "camera": false,
     "robot": false,
@@ -17,7 +17,7 @@
   "research_manifest_sha256": "7de6b3b29de5f693081316180415be73b30e62d88ac1dddbec25f327bbb109ea",
   "schema_version": 1,
   "source_training_commit": "e8699aa96fa317d6cfb98980eb7417e28b2df922",
-  "status": "software_identity_frozen_hardware_not_authorized",
-  "test_sha256": "520032bff0717ba4b7d52f5d1e6e4bf1a84eb785e16f1c77aa1eb4adfe0ad278",
+  "status": "software_identity_frozen_after_preflight_import_path_amendment_hardware_not_authorized",
+  "test_sha256": "0fc8eaaa40929345b1cba45cbc7f370ecd96ccbbeac7bda03b8dbd2f3093c2f6",
   "validator_sha256": "39cdafe7a9071bc83a025ee5fbe97aaa15611129481ef6ba28d8329dd73a0c12"
 }

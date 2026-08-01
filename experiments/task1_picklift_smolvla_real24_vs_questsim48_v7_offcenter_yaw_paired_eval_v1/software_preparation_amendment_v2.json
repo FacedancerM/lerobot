@@ -1,0 +1,44 @@
+{
+  "change": {
+    "added_dependency_path": "experiments/task1_picklift_real24_act_v1",
+    "checkpoint_changed": false,
+    "engine_changed": false,
+    "evaluation_contract_changed": false,
+    "plan_changed": false,
+    "profile_changed": false,
+    "scope": "adapter import path only",
+    "trial_order_changed": false
+  },
+  "created_at_utc": "2026-08-01T14:15:19.401565+00:00",
+  "evaluation_id": "task1_picklift_smolvla_real24_vs_questsim48_v7_offcenter_yaw_paired_eval24_v1",
+  "next_gate": {
+    "model_id": "B_real24_plus_questsim48_v7",
+    "trial_id": "t01"
+  },
+  "prior_software_gate_commit": "3a6f54e7d44ec850d00b860b571c4b1da3cf3a92",
+  "schema_version": 1,
+  "trigger": {
+    "camera_accessed": false,
+    "failure": "ModuleNotFoundError: deployment_safety",
+    "failure_stage": "official_engine_module_import_before_preflight",
+    "robot_accessed": false,
+    "rollout_executed": false,
+    "serial_accessed": false,
+    "status": "not_started_not_counted",
+    "torque_accessed": false,
+    "trial_artifact_created": false,
+    "trial_id": "t01"
+  },
+  "verification": {
+    "engine_sha256": "e81f21f298512b7de27d3142f2e308b8102404d0befab4ce7203fd6379882f9d",
+    "evaluator_sha256": "46cadb79853535e57c12f5540fc987c8f99a06717df89ea474ca5bb2a5fa7440",
+    "official_engine_import_without_hardware_access": "passed",
+    "plan_sha256": "797cda9d8215d2bc4435fffdce5f98a952f3aa452d0e28df28bb73ffd2ac4686",
+    "profile_sha256": "9cfbd4eb67b02c11f6f16448df3216bbba2f9221feef2f0c5e5a2a0dd130fd31",
+    "pytest": {
+      "failed": 0,
+      "passed": 10
+    },
+    "test_sha256": "0fc8eaaa40929345b1cba45cbc7f370ecd96ccbbeac7bda03b8dbd2f3093c2f6"
+  }
+}

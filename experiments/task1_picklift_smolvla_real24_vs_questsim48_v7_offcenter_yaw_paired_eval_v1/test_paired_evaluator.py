@@ -34,6 +34,13 @@ def test_static_checkpoint_processor_and_prompt_contract() -> None:
     assert all(row["task_prompt"] == evaluator.TASK_TEXT for row in static["models"].values())
 
 
+def test_official_engine_imports_without_hardware_access() -> None:
+    engine = evaluator.load_engine(plan())
+    assert engine.POLICY_CHUNK_SIZE == 50
+    assert engine.POLICY_ACTION_STEPS == 50
+    assert engine.CONTROL_FPS == 20
+
+
 def test_fake_24_trial_protocol_has_no_devices() -> None:
     result = evaluator.BASE.run_fake_protocol(plan())
     assert result["real_device_accessed"] is False
