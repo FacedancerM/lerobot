@@ -1,0 +1,38 @@
+{
+  "schema": "task1_picklift_smolvla_matched_pair_phase_a_verification_v1",
+  "verified_utc": "2026-08-01T05:52:43Z",
+  "status": "pass",
+  "plan_sha256": "b4af9304b8773a7d7e725fd0b3c970362cd0007e971580adeaee3a2f488393b2",
+  "preflight_result_sha256": "a71d465c2daa75d9107f526ca544a877e90c60c2a36d3efa78f8c31d15ad6bd5",
+  "base_inventory": "pass",
+  "vlm_inventory": "pass",
+  "dependency_freeze": "pass",
+  "official_loader": "pass",
+  "task_text_equal": true,
+  "real24_identity": {
+    "files": 56,
+    "bytes": 123884807,
+    "sha256": "251cbdc079b304425ccdfbd7a08f15d34858ea0dd8c19345544b8da9f3adb9f2"
+  },
+  "combined72_identity": {
+    "files": 104,
+    "bytes": 159543656,
+    "sha256": "957ef4a8dc7ec3c75d8b4febbebbdd839de47b9def3647eb716a28401929bedd"
+  },
+  "sampler": {
+    "complete_batches": 118,
+    "samples": 7552,
+    "per_domain_per_batch": 32,
+    "duplicates": 0,
+    "deterministic_repeat_equal": true
+  },
+  "tests": {
+    "command": ".venv/bin/pytest -q experiments/task1_picklift_real24_vs_questsim48_v7_smolvla_v1/test_phase_a_contract.py",
+    "passed": 7,
+    "failed": 0
+  },
+  "training_steps_executed": 0,
+  "optimizer_steps_executed": 0,
+  "hardware_accessed": false,
+  "push": false
+}

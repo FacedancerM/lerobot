@@ -1,0 +1,163 @@
+{
+  "schema": "task1_picklift_smolvla_matched_pair_phase_a_preflight_result_v1",
+  "experiment_id": "task1_picklift_real24_vs_questsim48_v7_smolvla_v1",
+  "completed_utc": "2026-08-01T05:52:43Z",
+  "status": "pass_pending_research_contract_no_training_started",
+  "owner": {
+    "worktree": "/home/ubuntu24/Teleop/worktrees/task1-smolvla-preflight-v1",
+    "branch": "codex/task1-smolvla-preflight-v1",
+    "base_commit": "52cfdc966af771be761257f4d8419d42a1d6db9d",
+    "main_dirty_worktree_touched": false
+  },
+  "dependency_freeze": {
+    "python": "3.12.3",
+    "pyproject_sha256": "d9e8960c33b69f963af3e7753ef05b902385c5f632444a73a10fd52fbc79851c",
+    "uv_lock_sha256": "367f3d6635ce0975bff459a02ea01ecd847836f491223c5394253d7d054b9280",
+    "sync_command": "uv sync --locked --extra smolvla --extra dataset --extra training --extra test",
+    "packages": {
+      "lerobot": "0.6.1",
+      "torch": "2.11.0+cu128",
+      "torchvision": "0.26.0+cu128",
+      "transformers": "5.5.4",
+      "tokenizers": "0.22.2",
+      "num2words": "0.5.14",
+      "accelerate": "1.14.0",
+      "huggingface-hub": "1.22.0",
+      "safetensors": "0.8.0",
+      "datasets": "4.8.5",
+      "pyarrow": "24.0.0",
+      "torchcodec": "0.11.1",
+      "pytest": "8.4.2"
+    },
+    "source_files": {
+      "src/lerobot/datasets/sampler.py": "f6325e00fa95ca2fcb0928ebc08c93afe8fbf2dc9a955a7bea90054400dd0480",
+      "src/lerobot/scripts/lerobot_train.py": "aa9b63e67b2d3978ad465b6580168b731009b6072a786172482c4390f31ae968",
+      "src/lerobot/policies/smolvla/configuration_smolvla.py": "2fb637cb428fa2fdf1d114646dcffaf4728216bfe5b7039d5d0cac4857ffc4e0",
+      "src/lerobot/policies/smolvla/modeling_smolvla.py": "5daaa297954acf9ae89397b571322f07bf30798e72f566e61a09393342cb1f99",
+      "src/lerobot/policies/smolvla/processor_smolvla.py": "d34594291b2ecf7801f8c27a940a998c52a7e308cbc89f2403c9cbecfb368f22"
+    }
+  },
+  "official_base": {
+    "repo": "lerobot/smolvla_base",
+    "resolved_revision": "c83c3163b8ca9b7e67c509fffd9121e66cb96205",
+    "cache_path": "/home/ubuntu24/.cache/huggingface/hub/models--lerobot--smolvla_base/snapshots/c83c3163b8ca9b7e67c509fffd9121e66cb96205",
+    "files": {
+      "README.md": {"bytes": 4605, "sha256": "adb98360b162fe40b6f7995d21c1a4250bd51ddd094973234e290482a35ea4ce"},
+      "config.json": {"bytes": 2299, "sha256": "650584b56c104720f7a3c91d1ec6bec9e8de8ac11e60c92ba2fa82d93eda147d"},
+      "model.safetensors": {"bytes": 906712520, "sha256": "7cd549ac2351fb069c0ddb3c34ad2d09cfc92b56a15dccdfc2e41467aaca01eb"},
+      "policy_postprocessor.json": {"bytes": 660, "sha256": "2b78bb742065288df2ec63b0ee35f97a1f6950171cf2272f7e34b1fe3873b17b"},
+      "policy_postprocessor_step_0_unnormalizer_processor.safetensors": {"bytes": 640, "sha256": "490ab239d96e263687c0b2e386a0afbc235a2eceb9857c36ed32f2f162a3e7c8"},
+      "policy_preprocessor.json": {"bytes": 1872, "sha256": "7683d648280a72f0d51e869fb8dd1596beed90b7f84849330cf1bc26634a4bd6"},
+      "policy_preprocessor_step_5_normalizer_processor.safetensors": {"bytes": 640, "sha256": "490ab239d96e263687c0b2e386a0afbc235a2eceb9857c36ed32f2f162a3e7c8"}
+    }
+  },
+  "transitive_vlm": {
+    "repo": "HuggingFaceTB/SmolVLM2-500M-Video-Instruct",
+    "resolved_revision": "7b375e1b73b11138ff12fe22c8f2822d8fe03467",
+    "cache_path": "/home/ubuntu24/.cache/huggingface/hub/models--HuggingFaceTB--SmolVLM2-500M-Video-Instruct/snapshots/7b375e1b73b11138ff12fe22c8f2822d8fe03467",
+    "files": {
+      "chat_template.json": {"bytes": 430, "sha256": "b585e3598909a5687f9f9d738d35223724dedef256b9b274e1cbfb32b13c74bf"},
+      "config.json": {"bytes": 3767, "sha256": "ea6bc1237e96247f6258de3e202e2e62b93d6f386dc47e7b36b5588bf3a15e17"},
+      "generation_config.json": {"bytes": 136, "sha256": "34835060c9f0f74d1acb456cc72ca32746d3843d9eb5f578f9cbffac1d2eb840"},
+      "merges.txt": {"bytes": 466391, "sha256": "0b54e8aa4e53d5383e2e4bc635a56b43f9647f7b13832d5d9ecd8f82dac4f510"},
+      "model.safetensors": {"bytes": 2029990624, "sha256": "b9bfd456c9472c0acd5719d6e514c4b859891af205ee1a736552fd3497b8b0c3"},
+      "preprocessor_config.json": {"bytes": 599, "sha256": "149e315d9410368e5491455bb06e0f763426e9e56cca731c13b24404a29b6374"},
+      "special_tokens_map.json": {"bytes": 868, "sha256": "2dfea2a426162316ff1567c82bc6d36d9690cd9f90455f075c77daca78b45c60"},
+      "tokenizer.json": {"bytes": 3548256, "sha256": "5ece781dc8d2b2f3e2f289ca0ae50b17cfc27dd27bfe7971bb8241e0b964331a"},
+      "tokenizer_config.json": {"bytes": 28626, "sha256": "dd9ce2ab89a3dd881bd9378f1a79b943a064b9275a7e1706d5b7b47b68977913"},
+      "vocab.json": {"bytes": 800662, "sha256": "82b84012e3add4d01d12ba14442026e49b8cbbaead1f79ecf3d919784f82dc79"}
+    }
+  },
+  "data_audit": {
+    "task_text": "Task 1 PickLift v1: grasp the 2 cm red cube and lift it >=5 cm with bilateral finger hold",
+    "task_texts_equal": true,
+    "tokenizer_max_length": 48,
+    "task_non_padding_tokens_including_required_newline": 27,
+    "task_token_payload_sha256": "a8eb3a6333ed9a4cb840ce525d13cf032d3146424d50e1f31c9d3f417e6b3a13",
+    "real24": {
+      "official_loader": "pass",
+      "episodes": 24,
+      "frames": 3790,
+      "fps": 20,
+      "files": 56,
+      "bytes": 123884807,
+      "tree_sha256": "251cbdc079b304425ccdfbd7a08f15d34858ea0dd8c19345544b8da9f3adb9f2"
+    },
+    "combined72": {
+      "official_loader": "pass",
+      "episodes": 72,
+      "frames": 10147,
+      "fps": 20,
+      "files": 104,
+      "bytes": 159543656,
+      "tree_sha256": "957ef4a8dc7ec3c75d8b4febbebbdd839de47b9def3647eb716a28401929bedd",
+      "real_domain": {"episodes": 24, "frames": 3790},
+      "simulation_domain": {"episodes": 48, "frames": 6357},
+      "each_accepted_episode_exactly_once": true,
+      "source_state_action_values_preserved": true
+    },
+    "common_loader_contract": {
+      "observation.state": "finite float32[6]",
+      "action": "finite float32[6]",
+      "observation.images.front": "finite float32[3,480,640]"
+    }
+  },
+  "sampler_probe": {
+    "combined72_batch_size": 64,
+    "real_per_batch": 32,
+    "simulation_per_batch": 32,
+    "complete_batches_per_epoch": 118,
+    "samples_per_epoch": 7552,
+    "real_samples_per_epoch": 3776,
+    "simulation_samples_per_epoch": 3776,
+    "duplicates_within_epoch": 0,
+    "oversampling": false,
+    "deterministic_seed": 1000
+  },
+  "cuda_non_training_probe": {
+    "gpu": "NVIDIA GeForce RTX 4080",
+    "gpu_total_mib": 16376,
+    "driver": "595.84",
+    "policy_total_parameters": 450046176,
+    "policy_trainable_parameters": 99880992,
+    "optimizer_steps": 0,
+    "parameters_updated": false,
+    "load_only_peak_gib": 0.863,
+    "batch_8": {
+      "real24": {"loss_finite": true, "loss": 0.69919, "peak_gib": 1.9577},
+      "combined72": {"loss_finite": true, "loss": 0.61579, "peak_gib": 1.9666}
+    },
+    "batch_64": {
+      "real24": {"loss_finite": true, "loss": 0.568899, "peak_gib": 9.2404},
+      "combined72": {"loss_finite": true, "loss": 0.397671, "peak_gib": 9.2458},
+      "action_shape": [64, 50, 6],
+      "state_shape": [64, 1, 6],
+      "front_shape": [64, 3, 480, 640],
+      "oom": false
+    },
+    "selected_common_batch_size": 64,
+    "higher_batch_sizes_probed": false,
+    "note": "Loss values are only finite-forward/backward diagnostics and are not training metrics. No optimizer step was executed."
+  },
+  "implementation_findings": {
+    "front_only_override_required": true,
+    "base_declares_three_camera_features": true,
+    "base_processor_uses_mutable_vlm_repo_name": true,
+    "exact_local_vlm_and_tokenizer_binding_required_before_training": true,
+    "dataset_specific_state_action_stats_are_expected_condition_inputs": true
+  },
+  "negative_evidence": {
+    "training_steps_executed": 0,
+    "optimizer_steps_executed": 0,
+    "checkpoints_created": 0,
+    "hardware_accessed": false,
+    "serial_accessed": false,
+    "hardware_camera_accessed": false,
+    "robot_or_torque_accessed": false,
+    "quest_or_remote_service_started": false,
+    "mujoco_rollout_started": false,
+    "dataset_modified": false,
+    "push": false
+  }
+}
+

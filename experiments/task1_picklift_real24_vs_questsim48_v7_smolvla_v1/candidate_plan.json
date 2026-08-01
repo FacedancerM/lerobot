@@ -1,0 +1,208 @@
+{
+  "schema": "task1_picklift_smolvla_matched_pair_candidate_plan_v1",
+  "experiment_id": "task1_picklift_real24_vs_questsim48_v7_smolvla_v1",
+  "created_utc": "2026-08-01T05:52:43Z",
+  "status": "phase_a_candidate_frozen_pending_research_contract_and_training_go",
+  "research_question": "Under one fixed SmolVLA recipe, does adding the frozen aligned Quest-Sim48-v7 demonstrations to Real24 improve Task 1 PickLift performance relative to Real24-only?",
+  "phase_authorization": {
+    "phase_a_preflight": true,
+    "model_training": false,
+    "hardware_or_rollout": false,
+    "push": false
+  },
+  "source_code": {
+    "repo": "/home/ubuntu24/Teleop/lerobot",
+    "isolated_worktree": "/home/ubuntu24/Teleop/worktrees/task1-smolvla-preflight-v1",
+    "branch": "codex/task1-smolvla-preflight-v1",
+    "base_commit": "52cfdc966af771be761257f4d8419d42a1d6db9d",
+    "lerobot_version": "0.6.1"
+  },
+  "task_contract": {
+    "task_text": "Task 1 PickLift v1: grasp the 2 cm red cube and lift it >=5 cm with bilateral finger hold",
+    "task_text_newline_before_tokenization": true,
+    "fps": 20,
+    "inputs": {
+      "observation.state": {
+        "dtype": "float32",
+        "shape": [6]
+      },
+      "observation.images.front": {
+        "dtype_in_dataset": "uint8_rgb_encoded_as_video",
+        "loader_shape": [3, 480, 640],
+        "policy_feature_type": "VISUAL"
+      }
+    },
+    "output": {
+      "action": {
+        "dtype": "float32",
+        "shape": [6]
+      }
+    },
+    "joint_order": [
+      "shoulder_pan",
+      "shoulder_lift",
+      "elbow_flex",
+      "wrist_flex",
+      "wrist_roll",
+      "gripper"
+    ],
+    "units": "Real dataset units: first five joints in degrees; gripper 0=closed and 100=open"
+  },
+  "initialization": {
+    "policy_repo": "lerobot/smolvla_base",
+    "policy_revision": "c83c3163b8ca9b7e67c509fffd9121e66cb96205",
+    "policy_model_sha256": "7cd549ac2351fb069c0ddb3c34ad2d09cfc92b56a15dccdfc2e41467aaca01eb",
+    "vlm_repo": "HuggingFaceTB/SmolVLM2-500M-Video-Instruct",
+    "vlm_revision": "7b375e1b73b11138ff12fe22c8f2822d8fe03467",
+    "vlm_model_sha256": "b9bfd456c9472c0acd5719d6e514c4b859891af205ee1a736552fd3497b8b0c3",
+    "initialize_each_run_independently_from_same_base": true,
+    "resume_from_smoke_or_other_condition": false,
+    "exact_local_binding_gate": {
+      "required_before_any_optimizer_step": true,
+      "policy_vlm_model_name": "/home/ubuntu24/.cache/huggingface/hub/models--HuggingFaceTB--SmolVLM2-500M-Video-Instruct/snapshots/7b375e1b73b11138ff12fe22c8f2822d8fe03467",
+      "preprocessor_tokenizer_name": "/home/ubuntu24/.cache/huggingface/hub/models--HuggingFaceTB--SmolVLM2-500M-Video-Instruct/snapshots/7b375e1b73b11138ff12fe22c8f2822d8fe03467",
+      "reason": "The official base processor names the mutable VLM repository without a revision; both policy and tokenizer must resolve to the frozen local snapshot."
+    }
+  },
+  "common_recipe": {
+    "seed": 1000,
+    "batch_size": 64,
+    "smoke_steps": 500,
+    "full_steps": 20000,
+    "selected_checkpoint_step": 20000,
+    "checkpoint_selection_after_results": false,
+    "n_obs_steps": 1,
+    "chunk_size": 50,
+    "n_action_steps": 50,
+    "action_horizon_seconds_at_20fps": 2.5,
+    "resize_imgs_with_padding": [512, 512],
+    "image_augmentation": false,
+    "normalization": {
+      "visual": "IDENTITY",
+      "state": "MEAN_STD from the condition's frozen training dataset",
+      "action": "MEAN_STD from the condition's frozen training dataset"
+    },
+    "freeze_vision_encoder": true,
+    "train_expert_only": true,
+    "train_state_proj": true,
+    "tokenizer_max_length": 48,
+    "num_diffusion_steps": 10,
+    "optimizer": {
+      "type": "AdamW",
+      "lr": 0.0001,
+      "betas": [0.9, 0.95],
+      "eps": 1e-08,
+      "weight_decay": 1e-10,
+      "grad_clip_norm": 10.0
+    },
+    "scheduler": {
+      "type": "CosineDecayWithWarmup",
+      "warmup_steps": 1000,
+      "decay_steps": 30000,
+      "decay_lr": 2.5e-06
+    },
+    "device": "cuda",
+    "use_amp": false,
+    "push_to_hub": false
+  },
+  "conditions": {
+    "A_real24_only": {
+      "dataset_root": "/home/ubuntu24/Teleop/artifacts/task1_picklift_formal24_s03_20260728",
+      "repo_id": "local/task1_picklift_formal24_s03_20260728",
+      "episodes": 24,
+      "frames": 3790,
+      "tree_sha256": "251cbdc079b304425ccdfbd7a08f15d34858ea0dd8c19345544b8da9f3adb9f2",
+      "tree_hash_algorithm": "SHA256 of UTF-8/LF rows '<file_sha256>  <relative_posix_path>\\n' sorted by relative path",
+      "accepted_subset_sha256": "a0449033d3f2b447cf6b0774ac5d363c8073ab10667799bf3920b61805373e1d",
+      "sampler": {
+        "type": "EpisodeAwareSampler",
+        "batch_size": 64,
+        "all_samples_are_real": true
+      }
+    },
+    "B_real24_plus_questsim48_v7": {
+      "dataset_root": "/home/ubuntu24/Teleop/artifacts/datasets/task1_picklift_real24_questsim48_v7_act_v1/combined72_v1",
+      "repo_id": "local/task1_picklift_real24_questsim48_v7_combined72_v1",
+      "episodes": 72,
+      "frames": 10147,
+      "tree_sha256": "957ef4a8dc7ec3c75d8b4febbebbdd839de47b9def3647eb716a28401929bedd",
+      "tree_hash_algorithm": "SHA256 of UTF-8/LF rows '<file_sha256>  <decimal_bytes>  <relative_posix_path>\\n' sorted by relative path",
+      "source_domains": {
+        "real": {
+          "episodes": 24,
+          "frames": 3790,
+          "episode_indices": "0..23"
+        },
+        "quest_sim48_v7": {
+          "episodes": 48,
+          "frames": 6357,
+          "episode_indices": "24..71",
+          "raw_tree_sha256": "9b6e62cf01084f6c965fc787f28b3ec129f0e9cfef476c71ce93be2a59c646cc",
+          "accepted_subset_sha256": "317bc3bb239e32d9e47f0ddf875ffcd8e265bc41c3bdd0be2407a9d65c9e1aa1"
+        }
+      },
+      "sampler": {
+        "type": "DomainBalancedSampler",
+        "batch_size": 64,
+        "real_per_batch": 32,
+        "simulation_per_batch": 32,
+        "complete_batches_per_epoch": 118,
+        "selected_real_samples_per_epoch": 3776,
+        "selected_simulation_samples_per_epoch": 3776,
+        "duplicates_or_oversampling_within_epoch": 0,
+        "seed": 1000
+      }
+    }
+  },
+  "predeclared_execution_order": [
+    {
+      "order": 1,
+      "run": "A_real24_only_smoke_500",
+      "steps": 500,
+      "initialize_from": "exact_frozen_base"
+    },
+    {
+      "order": 2,
+      "run": "B_real24_plus_questsim48_v7_smoke_500",
+      "steps": 500,
+      "initialize_from": "exact_frozen_base"
+    },
+    {
+      "order": 3,
+      "run": "A_real24_only_full_20000",
+      "steps": 20000,
+      "initialize_from": "exact_frozen_base",
+      "gate": "both smoke runs pass and research-control explicitly authorizes full training"
+    },
+    {
+      "order": 4,
+      "run": "B_real24_plus_questsim48_v7_full_20000",
+      "steps": 20000,
+      "initialize_from": "exact_frozen_base",
+      "gate": "A full run completes under the frozen contract"
+    }
+  ],
+  "post_training_boundary": {
+    "allowed": [
+      "checkpoint hash freeze",
+      "CUDA reload",
+      "one frozen Real sample and one frozen Sim sample finite offline inference"
+    ],
+    "not_automatic": [
+      "Remote MuJoCo rollout",
+      "Quest run",
+      "real robot evaluation",
+      "training extension",
+      "checkpoint switching",
+      "paper claim"
+    ]
+  },
+  "exclusions": [
+    "Quest-Sim24 and its mixed checkpoints",
+    "quarantined Sim48-v6 data",
+    "wrist camera",
+    "all ACT checkpoints as initialization",
+    "hardware and live services"
+  ]
+}
+
