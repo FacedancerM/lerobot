@@ -15,9 +15,12 @@
   "profile_sha256": "9cfbd4eb67b02c11f6f16448df3216bbba2f9221feef2f0c5e5a2a0dd130fd31",
   "research_control_commit": "ac6f49a5ca19b3ec00f393374bfd294ac0fc24c8",
   "research_manifest_sha256": "7de6b3b29de5f693081316180415be73b30e62d88ac1dddbec25f327bbb109ea",
+  "runtime_lock_sha256": "367f3d6635ce0975bff459a02ea01ecd847836f491223c5394253d7d054b9280",
+  "runtime_pyproject_sha256": "d9e8960c33b69f963af3e7753ef05b902385c5f632444a73a10fd52fbc79851c",
+  "runtime_python": "/home/ubuntu24/Teleop/worktrees/task1-smolvla-matched-real-eval-v2-v1/.venv/bin/python",
   "schema_version": 1,
   "source_training_commit": "e8699aa96fa317d6cfb98980eb7417e28b2df922",
-  "status": "software_identity_frozen_after_contract_adapter_amendment_hardware_not_authorized",
+  "status": "final_locked_runtime_frozen_t01_not_started",
   "test_sha256": "d38eeba1985387e1a627e132c51a85eefd5019e04b2fbc3f039ad1d5277e3a2a",
   "validator_sha256": "39cdafe7a9071bc83a025ee5fbe97aaa15611129481ef6ba28d8329dd73a0c12"
 }

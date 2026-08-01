@@ -1,0 +1,128 @@
+{
+  "contract_changes": {
+    "action_path": false,
+    "additional_limits": false,
+    "camera": false,
+    "checkpoint": false,
+    "plan": false,
+    "profile": false,
+    "prompt": false,
+    "ready_return": false,
+    "timing": false,
+    "trial_order": false
+  },
+  "created_at_utc": "2026-08-01T14:27:17.007671+00:00",
+  "evaluation_id": "task1_picklift_smolvla_real24_vs_questsim48_v7_offcenter_yaw_paired_eval24_v1",
+  "locked_sync": {
+    "command": "/home/ubuntu24/.local/bin/uv sync --locked --extra feetech --extra smolvla --extra test --extra dataset",
+    "cross_venv_pythonpath": false,
+    "old_venvs_modified": false
+  },
+  "next_gate": {
+    "model_id": "B_real24_plus_questsim48_v7",
+    "status": "not_started",
+    "trial_id": "t01"
+  },
+  "preflight_blockers_before_runtime_freeze": [
+    {
+      "failure": "missing deployment_safety import path",
+      "motion": false,
+      "ordinal": 1,
+      "stage": "engine import",
+      "valid_trial": false
+    },
+    {
+      "failure": "missing redundant evaluation_profile.sha256 field",
+      "motion": false,
+      "ordinal": 2,
+      "stage": "contract load",
+      "valid_trial": false
+    },
+    {
+      "camera_opened": false,
+      "failure": "missing feetech-servo-sdk in training venv",
+      "motion": false,
+      "ordinal": 3,
+      "serial_opened": false,
+      "stage": "SO101Follower construction",
+      "torque_enabled": false,
+      "valid_trial": false
+    }
+  ],
+  "prior_commit": "0638932c4cee3e02b4d0580f81e7584bc3ea9ddb",
+  "runtime": {
+    "hardware_access": {
+      "camera": false,
+      "robot": false,
+      "rollout": false,
+      "serial": false,
+      "torque": false
+    },
+    "joint_imports": {
+      "OpenCVCamera": "OpenCVCamera",
+      "OpenCVCameraConfig": "OpenCVCameraConfig",
+      "SO101Follower": "SOFollower",
+      "SmolVLAPolicy": "SmolVLAPolicy"
+    },
+    "lock_sha256": "367f3d6635ce0975bff459a02ea01ecd847836f491223c5394253d7d054b9280",
+    "origins": {
+      "OpenCVCamera": "/home/ubuntu24/Teleop/worktrees/task1-smolvla-matched-real-eval-v2-v1/src/lerobot/cameras/opencv/camera_opencv.py",
+      "SO101Follower": "/home/ubuntu24/Teleop/worktrees/task1-smolvla-matched-real-eval-v2-v1/src/lerobot/robots/so_follower/so_follower.py",
+      "SmolVLAPolicy": "/home/ubuntu24/Teleop/worktrees/task1-smolvla-matched-real-eval-v2-v1/src/lerobot/policies/smolvla/modeling_smolvla.py",
+      "lerobot": "/home/ubuntu24/Teleop/worktrees/task1-smolvla-matched-real-eval-v2-v1/src/lerobot/__init__.py",
+      "scservo_sdk": "/home/ubuntu24/Teleop/worktrees/task1-smolvla-matched-real-eval-v2-v1/.venv/lib/python3.12/site-packages/scservo_sdk/__init__.py",
+      "torch": "/home/ubuntu24/Teleop/worktrees/task1-smolvla-matched-real-eval-v2-v1/.venv/lib/python3.12/site-packages/torch/__init__.py",
+      "transformers": "/home/ubuntu24/Teleop/worktrees/task1-smolvla-matched-real-eval-v2-v1/.venv/lib/python3.12/site-packages/transformers/__init__.py"
+    },
+    "packages": {
+      "av": "15.1.0",
+      "datasets": "4.8.5",
+      "feetech-servo-sdk": "1.0.0",
+      "lerobot": "0.6.1",
+      "opencv-python-headless": "4.13.0.92",
+      "pyserial": "3.5",
+      "pytest": "8.4.2",
+      "torch": "2.11.0+cu128",
+      "torchvision": "0.26.0+cu128",
+      "transformers": "5.5.4"
+    },
+    "pyproject_sha256": "d9e8960c33b69f963af3e7753ef05b902385c5f632444a73a10fd52fbc79851c",
+    "python": "/home/ubuntu24/Teleop/worktrees/task1-smolvla-matched-real-eval-v2-v1/.venv/bin/python",
+    "python_version": "3.12.3 (main, Jun 19 2026, 12:46:00) [GCC 13.3.0]",
+    "status": "combined_runtime_import_passed_hardware_not_accessed"
+  },
+  "schema_version": 1,
+  "verification": {
+    "A": {
+      "finite": true,
+      "model_sha256": "916f0111caf004cafd37f8fd9db9b6e5aa35c1d125cf59ea5cd63b8f19897c83",
+      "shape": [
+        1,
+        6
+      ],
+      "task_prompt": "Task 1 PickLift v1: grasp the 2 cm red cube and lift it >=5 cm with bilateral finger hold"
+    },
+    "B": {
+      "finite": true,
+      "model_sha256": "1a1dbc6d553c9501a76d4ed4b9cc3bd7b84724216086432868d7ab6b2fa5c185",
+      "shape": [
+        1,
+        6
+      ],
+      "task_prompt": "Task 1 PickLift v1: grasp the 2 cm red cube and lift it >=5 cm with bilateral finger hold"
+    },
+    "dry_run_status": "software_dry_run_passed_hardware_not_accessed",
+    "fake_trials": 24,
+    "hardware_access": {
+      "camera": false,
+      "robot": false,
+      "rollout": false,
+      "serial": false,
+      "torque": false
+    },
+    "pytest": {
+      "failed": 0,
+      "passed": 11
+    }
+  }
+}
