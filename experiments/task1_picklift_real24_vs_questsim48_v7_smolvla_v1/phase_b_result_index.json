@@ -1,0 +1,24 @@
+{
+  "evidence_root": "/home/ubuntu24/Teleop/artifacts/evidence/task1_picklift_real24_vs_questsim48_v7_smolvla_v1/phase_b_v1/matched_pair_result_v1",
+  "experiment_id": "task1_picklift_real24_vs_questsim48_v7_smolvla_v1",
+  "hardware_accessed": false,
+  "independent_validation_sha256": "91d1c047696425701c765c147cdde3ccbb7d0d8217b07bfff09b7f610254ac96",
+  "matched_pair_summary_sha256": "cb7d1050c6bf3a025b40d18163b4828bed376fc1f6db70c635c38cebe679ea8f",
+  "paper_result": false,
+  "primary_hashes_sha256": "1759f34bd2eb902f33f7d52cab6d3e6b82c389510dfc176491b40e8a00fbd4aa",
+  "primary_inventory_sha256": "f24dc93f4fe85f426983b4fe3104ae4710944bfb3d758f867ac22e5683c3412c",
+  "pushed": false,
+  "rollout_started": false,
+  "schema": "task1_smolvla_phase_b_result_index_v1",
+  "selected_models": {
+    "A_real24_only": {
+      "checkpoint": "/home/ubuntu24/Teleop/artifacts/training/task1_picklift_real24_vs_questsim48_v7_smolvla_v1/A_real24_only_full_20000/checkpoints/020000/pretrained_model",
+      "model_sha256": "916f0111caf004cafd37f8fd9db9b6e5aa35c1d125cf59ea5cd63b8f19897c83"
+    },
+    "B_real24_plus_questsim48_v7": {
+      "checkpoint": "/home/ubuntu24/Teleop/artifacts/training/task1_picklift_real24_vs_questsim48_v7_smolvla_v1/B_real24_plus_questsim48_v7_full_20000/checkpoints/020000/pretrained_model",
+      "model_sha256": "1a1dbc6d553c9501a76d4ed4b9cc3bd7b84724216086432868d7ab6b2fa5c185"
+    }
+  },
+  "status": "offline_phase_b_complete_matched_pair_frozen"
+}

@@ -18,7 +18,10 @@ def test_exact_local_binding_is_front_only() -> None:
 
 
 def test_four_configs_share_one_policy_recipe() -> None:
-    configs = {key: verify.verify_config(name, require_absent_output=True) for key, name in verify.CONFIGS.items()}
+    configs = {
+        key: verify.verify_config(name, require_absent_output=False)
+        for key, name in verify.CONFIGS.items()
+    }
     verify.verify_config_pair(configs)
 
 
