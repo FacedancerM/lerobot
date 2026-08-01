@@ -1,0 +1,44 @@
+{
+  "canonical_review_hashes_sha256": "d9bc555ce2bd389f9ecc8108c5fbea1a1b3ef465cfef7a5701a3a5e2994546c7",
+  "canonical_review_manifest_sha256": "159d755734de1ab4b293b13f35811e02a22979a4a66f20a862f12d8936e1b768",
+  "canonical_review_summary_sha256": "67d6d3a6d739afec44a22d54e96dd66b3e56b6afaed4f6cffccc20f3b505e6a0",
+  "canonical_review_trials_sha256": "a5027713e9f07092878d9f4f6d8387c408a2227c2b494e2e95e0c918b9c77bc2",
+  "evaluation_id": "task1_picklift_smolvla_real24_vs_questsim48_v7_offcenter_yaw_paired_eval24_v1",
+  "interpretation_boundary": "Fresh 12-pose paired real engineering evaluation; do not generalize as a paper-scale effect estimate.",
+  "models": {
+    "A_real24_only": {
+      "failure_types": {
+        "missed_grasp": 11
+      },
+      "model_sha256": "916f0111caf004cafd37f8fd9db9b6e5aa35c1d125cf59ea5cd63b8f19897c83",
+      "reviewed_failures": 11,
+      "reviewed_success_rate": 0.08333333333333333,
+      "reviewed_successes": 1,
+      "trials": 12
+    },
+    "B_real24_plus_questsim48_v7": {
+      "failure_types": {
+        "missed_grasp": 11
+      },
+      "model_sha256": "1a1dbc6d553c9501a76d4ed4b9cc3bd7b84724216086432868d7ab6b2fa5c185",
+      "reviewed_failures": 11,
+      "reviewed_success_rate": 0.08333333333333333,
+      "reviewed_successes": 1,
+      "trials": 12
+    }
+  },
+  "operator_hashes_sha256": "e1146a791e3974912fc5b9069ef230d1718e34c3baa98ba21ea08095fa3ebd61",
+  "operator_manifest_sha256": "2af2381bb362683f08d0c72aa1a8fab35927c587c84a34498d7c3ff8c9e1ef60",
+  "operator_review_agreement_count": 24,
+  "operator_review_disagreements": [],
+  "operator_summary_sha256": "ef06b9f9dcbd9cb319c368364ad5aeb1e72536aef099c0d91bd730d7ab11a966",
+  "paired_outcomes": {
+    "A_only": 1,
+    "B_only": 1,
+    "both_failure": 10
+  },
+  "paper_result": false,
+  "result_statement": "A=1/12 and B=1/12; successes are on different poses; no directional matched-pair advantage is observed.",
+  "schema_version": 1,
+  "status": "matched_real_evaluation_and_canonical_review_complete"
+}
