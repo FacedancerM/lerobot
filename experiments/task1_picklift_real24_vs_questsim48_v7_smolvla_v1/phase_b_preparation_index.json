@@ -1,0 +1,22 @@
+{
+  "schema": "task1_smolvla_phase_b_preparation_index_v1",
+  "experiment_id": "task1_picklift_real24_vs_questsim48_v7_smolvla_v1",
+  "status": "pre_optimizer_gates_passed_ready_for_A_smoke",
+  "research_commit": "680e1e2f1b9c007f6d75c07e3a0b758fc94b3f67",
+  "authorization_token": "GO_TASK1_SMOLVLA_MATCHED_PAIR_PHASE_B_V1",
+  "evidence_root": "/home/ubuntu24/Teleop/artifacts/evidence/task1_picklift_real24_vs_questsim48_v7_smolvla_v1/phase_b_v1",
+  "preparation_result_sha256": "9f8ddf0d5df413f6ee6cf87e2f0e41151ef14df1e8cc98e7a0e2cfbd84cf8df0",
+  "pre_optimizer_gate_sha256": "ebf95fb42e0cb40dc29e2e278057205f11ecdf92cd8bd2c8ad7897c21d83a911",
+  "deep_pre_optimizer_gate_sha256": "b2e76b887973a71a7f3ddc948e4ee37a613d879040d7fb9b19cb9fc559738ca3",
+  "binding_manifest_sha256": "e5f761260e3fe4c249d77eb62fd69d9fd3766c1a8a6d0ef02c93b1dcf486582e",
+  "tests": "13 passed",
+  "model_state_missing_keys": [],
+  "model_state_unexpected_keys": [],
+  "condition_A_complete_batches_per_epoch": 59,
+  "condition_B_complete_batches_per_epoch": 118,
+  "condition_B_samples_per_domain_per_batch": 32,
+  "training_steps": 0,
+  "optimizer_steps": 0,
+  "hardware_accessed": false,
+  "pushed": false
+}
