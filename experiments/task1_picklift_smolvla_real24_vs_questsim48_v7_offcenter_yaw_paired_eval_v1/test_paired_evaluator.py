@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import argparse
 import copy
 import json
 from pathlib import Path
@@ -39,6 +40,22 @@ def test_official_engine_imports_without_hardware_access() -> None:
     assert engine.POLICY_CHUNK_SIZE == 50
     assert engine.POLICY_ACTION_STEPS == 50
     assert engine.CONTROL_FPS == 20
+
+
+def test_official_engine_loads_frozen_contract_before_device_preflight() -> None:
+    value = plan()
+    engine = evaluator.load_engine(value)
+    loaded_plan, profile, trial = engine.load_frozen_contract(
+        argparse.Namespace(
+            plan=evaluator.PLAN_PATH,
+            profile=evaluator.PROFILE_PATH,
+            maximum_trial_seconds=30.0,
+            spawn_region=value["trials"][0]["spawn_region"],
+        )
+    )
+    assert loaded_plan["evaluation_id"] == value["evaluation_id"]
+    assert profile["profile_id"] == value["evaluation_profile"]["profile_id"]
+    assert trial["trial_id"] == "t01"
 
 
 def test_fake_24_trial_protocol_has_no_devices() -> None:

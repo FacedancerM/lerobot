@@ -159,7 +159,7 @@ def load_frozen_contract(args: argparse.Namespace) -> tuple[dict, dict, dict]:
     profile_ref = plan["evaluation_profile"]
     if profile_ref["profile_id"] != profile["profile_id"]:
         raise RuntimeError("Evaluation plan/profile identity mismatch.")
-    if profile_ref["sha256"] != EXPECTED_PROFILE_SHA256:
+    if profile_ref.get("sha256", EXPECTED_PROFILE_SHA256) != EXPECTED_PROFILE_SHA256:
         raise RuntimeError("Evaluation plan/profile hash reference mismatch.")
     if profile["ready_pose"]["state_sha256"] != READY_POSE_STATE_SHA256:
         raise RuntimeError("Ready-pose state SHA differs from the frozen contract.")
@@ -175,7 +175,7 @@ def load_frozen_contract(args: argparse.Namespace) -> tuple[dict, dict, dict]:
     if setup["policy_chunk_size"] != POLICY_CHUNK_SIZE:
         raise RuntimeError("SmolVLA chunk size differs from the frozen checkpoint.")
     if setup["policy_n_action_steps"] != POLICY_ACTION_STEPS:
-        raise RuntimeError("ACT action-step count differs from the frozen checkpoint.")
+        raise RuntimeError("SmolVLA action-step count differs from the frozen checkpoint.")
     if args.maximum_trial_seconds != setup["maximum_trial_seconds"]:
         raise RuntimeError("Trial duration differs from the frozen plan.")
     matches = [

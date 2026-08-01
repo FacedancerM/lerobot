@@ -11,6 +11,18 @@
     "sha256": "6a89366c9bde654e053190e5a52eefe35a4e17efde174c489b6a68afe03c5acf",
     "trigger_trial_not_started_not_counted": true
   },
+  "amendment_v3": {
+    "evaluation_contract_changed": false,
+    "hardware_open_or_motion": {
+      "camera": false,
+      "robot": false,
+      "rollout": false,
+      "serial": false,
+      "torque": false
+    },
+    "sha256": "87aaeaa2df48526d358071bd10da75dc3a38ae0df8967033da4864436778ab0f",
+    "trigger_trial_not_started_not_counted": true
+  },
   "canonical_review_schema_sha256": "052cd73fbb6a541d54b1175ca3474908453b89f3f7907eaf9bc2ef914014a1ed",
   "dry_run": {
     "checkpoint_adapter_smoke": {
@@ -93,9 +105,9 @@
     "independent_validation_sha256": "6365c7f1ec956e328d0582a893fc5848801eb5233ff93e95fb8ee8d1c99d5de5",
     "root": "/home/ubuntu24/Teleop/artifacts/evaluation/task1_picklift_smolvla_real24_vs_questsim48_v7_offcenter_yaw_paired_eval24_v1/software_preparation_v1"
   },
-  "status": "software_preparation_passed_after_import_path_amendment_waiting_for_explicit_hardware_go",
+  "status": "software_preparation_passed_after_contract_adapter_amendment_waiting_for_hardware_execution",
   "tests": {
     "failed": 0,
-    "passed": 10
+    "passed": 11
   }
 }

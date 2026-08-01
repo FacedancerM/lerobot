@@ -1,0 +1,44 @@
+{
+  "change": {
+    "action_path_changed": false,
+    "checkpoint_changed": false,
+    "detail": "Accept omitted redundant evaluation_profile.sha256 while still validating the profile file SHA and profile_id against frozen values.",
+    "evaluation_contract_changed": false,
+    "plan_changed": false,
+    "profile_changed": false,
+    "scope": "engine plan-schema adapter only",
+    "trial_order_changed": false
+  },
+  "created_at_utc": "2026-08-01T14:17:25.015464+00:00",
+  "evaluation_id": "task1_picklift_smolvla_real24_vs_questsim48_v7_offcenter_yaw_paired_eval24_v1",
+  "next_gate": {
+    "model_id": "B_real24_plus_questsim48_v7",
+    "trial_id": "t01"
+  },
+  "prior_software_gate_commit": "02b98c699eb4e6716c2232f75a17e38ead191ff0",
+  "schema_version": 1,
+  "trigger": {
+    "camera_opened": false,
+    "failure": "KeyError: evaluation_profile.sha256",
+    "failure_stage": "frozen_contract_load_before_device_identity_checks",
+    "robot_connected": false,
+    "rollout_executed": false,
+    "serial_opened": false,
+    "status": "not_started_not_counted",
+    "torque_enabled": false,
+    "trial_artifact_created": false,
+    "trial_id": "t01"
+  },
+  "verification": {
+    "engine_sha256": "389b45ccd585c99659be68e99da2ccc8837107920f1a209f97866b5b0d254ccd",
+    "evaluator_sha256": "46cadb79853535e57c12f5540fc987c8f99a06717df89ea474ca5bb2a5fa7440",
+    "official_engine_frozen_contract_load_without_devices": "passed",
+    "plan_sha256": "797cda9d8215d2bc4435fffdce5f98a952f3aa452d0e28df28bb73ffd2ac4686",
+    "profile_sha256": "9cfbd4eb67b02c11f6f16448df3216bbba2f9221feef2f0c5e5a2a0dd130fd31",
+    "pytest": {
+      "failed": 0,
+      "passed": 11
+    },
+    "test_sha256": "d38eeba1985387e1a627e132c51a85eefd5019e04b2fbc3f039ad1d5277e3a2a"
+  }
+}
